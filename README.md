@@ -1,4 +1,4 @@
-# ❌ Git Push Error: Remote Contains Work You Don't Have
+### ❌ Git Push Error: Remote Contains Work You Don't Have
 
 #### ❗ Terminal Output:
 
@@ -151,7 +151,7 @@ To https://github.com/abdullah-backops/C-programming.git
 
 ---
 
-### 🧾 Final Summary:
+#### 🧾 Final Summary:
 
 * ✅ Remote এ conflict থাকলে push হয় না
 * ✅ Pull এর আগে stash করা হয়েছে
@@ -209,7 +209,7 @@ To https://github.com/abdullah-backops/C-programming.git
 
 #### 🔍 Output ব্যাখ্যা (Step-by-Step):
 
-### 🔸 1. **Git Local Changes গুলো গুনে ও Compress করে**
+#### 🔸 1. **Git Local Changes গুলো গুনে ও Compress করে**
 
 ```bash
 Enumerating objects: 24, done.
@@ -224,7 +224,7 @@ Compressing objects: 100% (13/13), done.
 * এর মধ্যে 13টি object (blob, tree, commit) compress করা হলো efficiently
 * Git compression করে server-এ পাঠানোর জন্য প্রস্তুত করলো
 
-### 🔸 2. **GitHub-side এ object পাঠানো হলো এবং process করা হলো**
+#### 🔸 2. **GitHub-side এ object পাঠানো হলো এবং process করা হলো**
 
 ```bash
 Writing objects: 100% (13/13), 4.95 KiB | 563.00 KiB/s, done.
@@ -238,7 +238,7 @@ remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
 * এর মধ্যে 8টি ছিল **delta** (মানে diff-based optimized object)
 * GitHub সেগুলো resolve করতে পেরেছে
 
-### ⚠️ 3. **GitHub তোমাকে একটা জরুরি Message দেয়**:
+#### ⚠️ 3. **GitHub তোমাকে একটা জরুরি Message দেয়**:
 
 ```bash
 remote: This repository moved. Please use the new location:
@@ -251,7 +251,7 @@ remote:   https://github.com/abdullah-core/C-programming.git
 
 📌 তাই ভবিষ্যতে GitHub-এ কিছু push/pull করতে হলে — **এই নতুন URL ব্যবহার করতে হবে।**
 
-### 🔸 4. **Push সফলভাবে শেষ হয়েছে**
+#### 🔸 4. **Push সফলভাবে শেষ হয়েছে**
 
 ```bash
 To https://github.com/abdullah-backops/C-programming.git
