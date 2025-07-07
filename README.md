@@ -14,7 +14,7 @@ hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
----
+
 
 #### 🔍 Explanation:
 
@@ -43,7 +43,7 @@ error: cannot pull with rebase: You have unstaged changes.
 error: Please commit or stash them.
 ```
 
----
+
 
 #### 🔍 Explanation:
 
@@ -83,7 +83,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (286f9c10e5c9c6947dde23ebd34a9966bf1f0e01)
 ```
 
----
+
 
 #### 🔍 Explanation:
 
@@ -116,7 +116,7 @@ To https://github.com/abdullah-backops/C-programming.git
    6213b1d..a0bcf6a  main -> main
 ```
 
----
+
 
 #### 🔍 Line-by-Line Explanation:
 
@@ -149,7 +149,7 @@ To https://github.com/abdullah-backops/C-programming.git
   ➤ এখন তোমার local main branch এর commit `a0bcf6a` দিয়ে update হয়েছে
   ➤ "main -> main" : Local main → Remote main এ সফলভাবে push হয়েছে ✅
 
----
+
 
 #### 🧾 Final Summary:
 
@@ -205,7 +205,7 @@ To https://github.com/abdullah-backops/C-programming.git
    db62e2b..f2bd938  main -> main
 ```
 
----
+
 
 #### 🔍 Output ব্যাখ্যা (Step-by-Step):
 
@@ -265,7 +265,7 @@ To https://github.com/abdullah-backops/C-programming.git
 
 ✅ তোমার push **পুরোপুরি সফল** হয়েছে।
 
----
+
 
 #### ✅ এখন নতুন Github account তোমার PC এর Git এ এড কর:
 
