@@ -1,5 +1,3 @@
-# Git
-
 ### ❌ Git Push Error: Remote Contains Work You Don't Have
 
 #### ❗ Terminal Output:
@@ -162,3 +160,119 @@ To https://github.com/abdullah-backops/C-programming.git
 * ✅ Push শেষে সফলভাবে GitHub এ update হয়েছে
 
 এখন GitHub এ গিয়ে Commit history দেখলে সব update দেখে ফেলতে পারো 😄
+
+---
+
+### ✅ Commit Explanation
+
+#### Terminal Output:
+
+```bash
+$ git commit -m "new & modified"
+[main f2bd938] new & modified
+ 8 files changed, 316 insertions(+), 18 deletions(-)
+ create mode 100644 problem_solving/codeforces/A_Blackboard_Game.c
+```
+
+#### 🔍 Explanation:
+
+* তুমি একটি নতুন commit করেছো
+* এই commit এর SHA ID = `f2bd938`
+* ৮টি ফাইলে মোট 316 লাইন যোগ ও 18 লাইন মুছে ফেলা হয়েছে
+* ১টি নতুন ফাইল যোগ হয়েছে → `A_Blackboard_Game.c`
+
+🧠 Git এই commit-কে `.git/objects`-এ একটি commit object হিসেবে store করেছে
+আর তোমার `main` branch এখন `f2bd938` commit কে point করছে ✅
+
+
+---
+### 📤 Git Push with Repository Moved Warning
+
+#### ✅ Terminal Output:
+
+```bash
+$ git push
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (13/13), 4.95 KiB | 563.00 KiB/s, done.
+Total 13 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/abdullah-core/C-programming.git
+To https://github.com/abdullah-backops/C-programming.git
+   db62e2b..f2bd938  main -> main
+```
+
+---
+
+#### 🔍 Output ব্যাখ্যা (Step-by-Step):
+
+### 🔸 1. **Git Local Changes গুলো গুনে ও Compress করে**
+
+```bash
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+```
+
+**মানে:**
+
+* Git তোমার পরিবর্তিত commit গুলোকে **object** হিসেবে ধরলো (24টা total)
+* এর মধ্যে 13টি object (blob, tree, commit) compress করা হলো efficiently
+* Git compression করে server-এ পাঠানোর জন্য প্রস্তুত করলো
+
+### 🔸 2. **GitHub-side এ object পাঠানো হলো এবং process করা হলো**
+
+```bash
+Writing objects: 100% (13/13), 4.95 KiB | 563.00 KiB/s, done.
+Total 13 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+```
+
+**মানে:**
+
+* GitHub-এ সফলভাবে 13টি object পাঠানো হয়েছে
+* এর মধ্যে 8টি ছিল **delta** (মানে diff-based optimized object)
+* GitHub সেগুলো resolve করতে পেরেছে
+
+### ⚠️ 3. **GitHub তোমাকে একটা জরুরি Message দেয়**:
+
+```bash
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/abdullah-core/C-programming.git
+```
+
+🎯 **এখানে আসল চমক!**
+
+> GitHub বলছে:  তোমার যেই repo আগে `abdullah-backops` GitHub account এ ছিল, সেটা **move করে এখন ********************************`abdullah-core`******************************** account এ রাখা হয়েছে**।
+
+📌 তাই ভবিষ্যতে GitHub-এ কিছু push/pull করতে হলে — **এই নতুন URL ব্যবহার করতে হবে।**
+
+### 🔸 4. **Push সফলভাবে শেষ হয়েছে**
+
+```bash
+To https://github.com/abdullah-backops/C-programming.git
+   db62e2b..f2bd938  main -> main
+```
+
+**মানে:**
+
+* Local commit `db62e2b` → GitHub এর main branch এ পৌঁছেছে
+* এখন GitHub এ `f2bd938` হল latest commit
+
+✅ তোমার push **পুরোপুরি সফল** হয়েছে।
+
+---
+
+#### ✅ এখন নতুন Github account তোমার PC এর Git এ এড কর:
+
+```bash
+git remote set-url origin https://github.com/abdullah-core/C-programming.git
+```
+
+এতে future push/pull সব নতুন URL দিয়েই হবে।
+
+---
