@@ -1,4 +1,4 @@
-### ❌ Git Push Error: Remote Contains Work You Don't Have
+# ❌ Git Push Error: Remote Contains Work You Don't Have
 
 #### ❗ Terminal Output:
 
